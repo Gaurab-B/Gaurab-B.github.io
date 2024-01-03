@@ -173,10 +173,10 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="assets/php/form-process.php" class="contact__form" method="POST">
-                        <input type="text" placeholder="Name" class="contact__input" name="text">
-                        <input type="email" placeholder="Email" class="contact__input" name="email"> <!-- Corrected the name attribute here -->
-                        <textarea id="" cols="0" rows="10" class="contact__input" name="message"></textarea>
+                    <form action="assets/php/form-process.php" class="contact__form" method="POST" enctype="multipart/form-data">
+                        <input type="text" placeholder="Name" class="contact__input" name="Name">
+                        <input type="email" placeholder="Email" class="contact__input" name="Email"> <!-- Corrected the name attribute here -->
+                        <textarea id="" cols="0" rows="10" class="contact__input" name="Message"></textarea>
                         <button type="submit" class="contact__button button">Send</button>
                     </form>
                 </div>

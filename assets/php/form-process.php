@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['email'])) {
+if (isset($_POST['Email'])) {
 
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "gaurabusa@gmail.com";
@@ -15,16 +15,16 @@ if (isset($_POST['email'])) {
 
     // validation expected data exists
     if (
-        !isset($_POST['text']) ||
-        !isset($_POST['email']) ||
-        !isset($_POST['message'])
+        !isset($_POST['Name']) ||
+        !isset($_POST['Email']) ||
+        !isset($_POST['Message'])
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
 
-    $name = $_POST['text']; // required
-    $email = $_POST['email']; // required
-    $message = $_POST['message']; // required
+    $name = $_POST['Name']; // required
+    $email = $_POST['Email']; // required
+    $message = $_POST['Message']; // required
 
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
