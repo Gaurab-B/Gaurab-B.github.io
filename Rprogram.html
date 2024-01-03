@@ -11,28 +11,43 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 150vh;
+            height: 125vh;
             margin: 0;
         }
 
         .container {
-            display: flex;
             width: 80%;
             max-width: 800px;
-            flex-direction: row; 
         }
 
         .column {
             flex: 1;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            text-align: center;
         }
         #footer_c{
             margin-top: auto;
         }
-        p, li {
+        p, li, h3 {
             font-family: cursive;
             text-align: justify;
+        }
+        .column-container{
+            display: flex;
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+            justify-content: space-around;
+
+        }
+        h3{
+            text-align: center;
+            margin: 0;
+            padding: 2;
+        }
+        .column p {
+            display: inline-block;
         }
     </style>
 </head>
@@ -64,8 +79,6 @@
 <div class="container">
     <br>
     <br>
-    <br>
-    <br>
     <p>I led a collaborative research with my team to collect and analyze data on Manchester City Football/Soccer games from 2018 to the present. This involved:</p>
 
 <ol>
@@ -78,10 +91,11 @@
 </ol>
 
 <p>The details of the project can be found by clicking <a href="https://github.com/Gaurab-B/Manchester_City_Linear_Regression" target="_blank">here</a>.</p>
-
-
+<br>
+<br>
+<div class = "column-container">
     <div class="column">
-        <h2>Presentation</h2>
+        <h3>Presentation</h3>
         <p>
             <a href="assets/files/final_data.pdf" download="PresentationManchesterCity.pdf">
                 <embed src="assets/files/final_Data.jpg" type="image/jpg" width="200" height="150">
@@ -90,25 +104,27 @@
     </div>
     
     <div class="column">
-        <h2>Final Paper</h2>
+        <h3>Final Paper</h3>
         <p>
-            <a href="assets/files/Final_Everything_included.pdf" download="PresentationManchesterCity.pdf">
+            <a href="assets/files/Final_Everything_included.pdf" download="FinalPaperManchesterCity.pdf">
                 <embed src="assets/files/final_everything.jpg" type="image/jpg" width="200" height="150">
             </a>
         </p>
     </div>
 </div>
 </div>
+</div>
+
 <div id = "footer_c">
 <!--===== FOOTER =====-->
 <footer class="footer">
-    <p class="footer__title">Gaurab</p>
+    <p class="footer__title" style="text-align: center;">Gaurab</p>
     <div class="footer__social">
         <a href="https://www.facebook.com/gauurab/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
         <a href="https://www.instagram.com/gauurab/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
         <a href="https://twitter.com/gaurabbaral5" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
     </div>
-    <p class="footer__copy">&#169; Namaste. All rights reserved.</p>
+    <p class="footer__copy" style="text-align: center;">&#169; Namaste. All rights reserved.</p>
 </footer>
 </div>
 </body>
