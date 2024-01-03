@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        body {
+        .top {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -19,6 +19,7 @@
             display: flex;
             width: 80%;
             max-width: 800px;
+            flex-direction: column; 
         }
 
         .column {
@@ -28,9 +29,17 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
+        #footer_c{
+            margin-top: auto;
+        }
+        p, li {
+            font-family: cursive;
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
+    <div class = "top">
 <!--===== HEADER =====-->
 <header class="l-header">
     <nav class="nav bd-grid">
@@ -53,7 +62,26 @@
         </div>
     </nav>
 </header>
+
 <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>I led a collaborative research with my team to collect and analyze data on Manchester City Football/Soccer games from 2018 to the present. This involved:</p>
+
+<ol>
+    <li>Extracting information from the Google Football/Soccer Database using Beautiful Soup.</li>
+    <li>Employing Pandas to clean the dataset thoroughly.</li>
+    <li>Strategically sampling games to eliminate bias.</li>
+    <li>Conducting a statistical analysis using the R programming language to explore the details of the dataset in depth.</li>
+    <li>Developing a sophisticated predictive linear regression model as the culmination of our efforts.</li>
+    <li>Fine-tuning the model through the strategic application of backward elimination techniques to ensure accurate forecasts of the total goals scored by Manchester City.</li>
+</ol>
+
+<p>The details of the project can be found by clicking <a href="https://github.com/Gaurab-B/Manchester_City_Linear_Regression" target="_blank">here</a>.</p>
+
+
     <div class="column">
         <h2>Column 1</h2>
         <p>This is the content of column 1.</p>
@@ -64,6 +92,18 @@
         <p>This is the content of column 2.</p>
     </div>
 </div>
-
+</div>
+<div id = "footer_c">
+<!--===== FOOTER =====-->
+<footer class="footer">
+    <p class="footer__title">Gaurab</p>
+    <div class="footer__social">
+        <a href="https://www.facebook.com/gauurab/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+        <a href="https://www.instagram.com/gauurab/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+        <a href="https://twitter.com/gaurabbaral5" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+    </div>
+    <p class="footer__copy">&#169; Namaste. All rights reserved.</p>
+</footer>
+</div>
 </body>
 </html>
