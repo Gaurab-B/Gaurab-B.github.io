@@ -20,34 +20,17 @@
             max-width: 800px;
         }
 
-        .column {
-            flex: 1;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            text-align: center;
-        }
         #footer_c{
             margin-top: auto;
         }
-        p, li, h3 {
-            font-family: cursive;
+        p, h3, h4 {
+            font-family: 'Times New Roman', Times, serif;
             text-align: justify;
-        }
-        .column-container{
-            display: flex;
-            width: 60%;
-            margin: auto;
-            padding: 10px;
-            justify-content: space-around;
-
         }
         h3{
             text-align: center;
             margin: 0;
-            padding: 2;
-        }
-        .column p {
-            display: inline-block;
+            padding: 0;
         }
     </style>
 </head>
@@ -69,12 +52,39 @@
                 <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
             </ul>
         </div>
-
         <div class="nav__toggle" id="nav-toggle">
             <i class='bx bx-menu'></i>
         </div>
     </nav>
 </header>
+<div class="container">
+    <h3>Movie Recommendation System</h3>
+    <br>
+    <h4>May to August 2023:</h4>
+    <p style="text-indent: 2%;">
+        <ul>
+        <li style="text-indent: 2%;">I worked on Content based filtering including concepts like natural language processing, data vectorization, cosine similarity.</li>
+        <li style="text-indent: 2%;">I also  presented a posted at Heather Bullen Research Celebration about the findings of the research.</li>
+        </ul>
+        
+        <h5 style="text-indent: 2%;">Abstract:</h5>
+        <p style="text-indent: 4%;">This Movie Recommendations project aims to create a delightful movie-watching experience for users by providing personalized movie suggestions based on their preferences and movie attributes. The project focuses on building a prototype that extracts data from diverse movie databases. The system prepares the data for analysis using the Bag-of-Words, TF-IDF, and hashing models. It then utilizes cosine and Jaccard similarity metrics to measure movie similarity by employing preprocessing techniques. Through comparing all six combinations (bag-of-words / TF-IDF / hashing + cosine, bag-of-words / TF-IDF / hashing + Jaccard), the most effective approach is determined. This user-friendly tool significantly enhances the movie-watching experience, enabling users to explore personalized movie recommendations catering to their unique preferences.
+        </p>
+        <h5 style="text-indent: 2%;">Presentation:</h5>
+        <p>
+            <a href="assets/files/final_data.pdf" download="PresentationManchesterCity.pdf">
+                <embed src="assets/files/final_Data.jpg" type="image/jpg" width="200" height="150">
+            </a>
+        </p>
+    </p>
+    
+
+    <h4>August 2023 to present:</h4>
+    <p style="text-indent: 2%;">
+        Currently diving into concepts like KNN models, SVMs, Neural Networks, and other deep learning techniques. 
+        Project funded by L.I.F.E fellowship under NKU.
+    </p>
+</div>
 </div>
 <div id = "footer_c">
 <!--===== FOOTER =====-->
