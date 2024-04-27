@@ -40,7 +40,57 @@
         .button:hover {
             background-color: #0056b3;
         }
-    </style>
+        .buttons {
+            margin-top: 100px; /* Adjust as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none; /* Remove default underline */
+            transition: background-color 0.3s; /* Smooth transition effect */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .buttons {
+            margin-top: 100px; /* Adjust as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none; /* Remove default underline */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+            float: left; /* Make the button float */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        </style>
 </head>
 <body>
     <div class="title">Regression Calculator</div>

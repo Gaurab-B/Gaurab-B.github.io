@@ -5,75 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regression Calculators</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .form-container {
-            margin-top: 50px;
-        }
-        .form-label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        .form-input {
-            padding: 8px;
-            margin-bottom: 20px;
-            width: 200px;
-            font-size: 16px;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .total-points,
-        .result {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .go-back {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-        .go-back-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .go-back {
-            font-size: 16px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
-            padding: 8px 16px;
-            border-radius: 5px;
-        }
-        .go-back:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav {
+        background-color: #f0f0f0;
+        padding: 20px 0; /* Add padding to top and bottom */
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 0; /* Remove margin-top */
+        margin-bottom: 0; /* Remove margin-bottom */
+    }
+    .go-back-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .go-back {
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    .go-back:hover {
+        background-color: #0056b3;
+    }
+    .form-container {
+        margin-top: 50px;
+    }
+    .form-label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-input {
+        padding: 8px;
+        margin-bottom: 20px;
+        width: 200px;
+        font-size: 16px;
+    }
+    .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+    .total-points,
+    .result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    #himalaya {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%; /* Adjust the height as needed */
+        opacity: 0.1;
+        z-index: -1;
+    }
+</style>
 </head>
 <body>
-    <div class="title">Regression Calculators</div>
-    <div class="go-back-container">
-        <a href="mainpade.html" class="go-back">Go Back</a>
-    </div>
+    <nav>
+        <div class="title">Regression Calculators</div>
+        <div class="go-back-container">
+            <a href="mainpade.html" class="go-back">Go Back</a>
+        </div>
+    </nav>
     <div class="form-container">
         <!-- Combined Regression Form -->
         <form id="combinedRegressionForm">
@@ -91,7 +103,9 @@
         <button class="button" type="submit" form="combinedRegressionForm">Calculate</button>
         <div class="total-points" id="totalPointsText"></div>
         <div class="result" id="probabilityText"></div>
+        
     </div>
+    <div><img id="himalaya" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/himalaya-mountains-nepal-panoramic-images.jpg"></img></div>
 
     <script>
         // Combined Regression Form Submission
