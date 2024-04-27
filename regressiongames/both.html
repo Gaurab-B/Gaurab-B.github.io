@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Calculators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .form-container {
+            margin-top: 50px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-input {
+            padding: 8px;
+            margin-bottom: 20px;
+            width: 200px;
+            font-size: 16px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .total-points,
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .go-back {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .go-back-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .go-back {
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        .go-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Regression Calculators</div>
+    <div class="go-back-container">
+        <a href="mainpade.html" class="go-back">Go Back</a>
+    </div>
+    <div class="form-container">
+        <!-- Combined Regression Form -->
+        <form id="combinedRegressionForm">
+            <label class="form-label" for="buildUpPlayPassing">Build Up Play Passing:</label>
+            <input class="form-input" type="number" id="buildUpPlayPassing" name="buildUpPlayPassing" required>
+            <label class="form-label" for="chanceCreationCrossing">Chance Creation Crossing:</label>
+            <input class="form-input" type="number" id="chanceCreationCrossing" name="chanceCreationCrossing" required>
+            <label class="form-label" for="defencePressure">Defence Pressure:</label>
+            <input class="form-input" type="number" id="defencePressure" name="defencePressure" required>
+            <label class="form-label" for="goalsScored">Goals Scored:</label>
+            <input class="form-input" type="number" id="goalsScored" name="goalsScored" required>
+            <label class="form-label" for="goalsConceded">Goals Conceded:</label>
+            <input class="form-input" type="number" id="goalsConceded" name="goalsConceded" required>
+        </form>
+        <button class="button" type="submit" form="combinedRegressionForm">Calculate</button>
+        <div class="total-points" id="totalPointsText"></div>
+        <div class="result" id="probabilityText"></div>
+    </div>
+
+    <script>
+        // Combined Regression Form Submission
+        document.getElementById("combinedRegressionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            var formData = new FormData(event.target);
+            var buildUpPlayPassing = parseFloat(formData.get("buildUpPlayPassing"));
+            var chanceCreationCrossing = parseFloat(formData.get("chanceCreationCrossing"));
+            var defencePressure = parseFloat(formData.get("defencePressure"));
+            var goalsScored = parseFloat(formData.get("goalsScored"));
+            var goalsConceded = parseFloat(formData.get("goalsConceded"));
+    
+            // Linear Regression coefficients
+            var linearIntercept = 67.3656;
+            var linearCoefficients = {
+                buildUpPlayPassing: -0.1759,
+                chanceCreationCrossing: 0.1027,
+                defencePressure: -0.1138,
+                goalsScored: 0.5187,
+                goalsConceded: -0.6375
+            };
+    
+            // Logistic Regression coefficients
+            var logisticIntercept = 10.73;
+            var logisticCoefficients = {
+                buildUpPlayPassing: -0.1090,
+                goalsScored: 0.1612,
+                goalsConceded: -0.3624
+            };
+    
+            // Calculate Linear Regression total points
+            var linearTotalPoints = linearIntercept +
+                (linearCoefficients.buildUpPlayPassing * buildUpPlayPassing) +
+                (linearCoefficients.chanceCreationCrossing * chanceCreationCrossing) +
+                (linearCoefficients.defencePressure * defencePressure) +
+                (linearCoefficients.goalsScored * goalsScored) +
+                (linearCoefficients.goalsConceded * goalsConceded);
+    
+            // Calculate Logistic Regression probability
+            var logisticZ = logisticIntercept +
+                (logisticCoefficients.buildUpPlayPassing * buildUpPlayPassing) +
+                (logisticCoefficients.goalsScored * goalsScored) +
+                (logisticCoefficients.goalsConceded * goalsConceded);
+    
+            var logisticProbability = Math.exp(logisticZ) / (1 + Math.exp(logisticZ));
+    
+            // Round off to 4 decimal places
+            linearTotalPoints = Math.round(linearTotalPoints * 10000) / 10000;
+            logisticProbability = Math.round(logisticProbability * 10000) / 100;
+    
+            // Display results to the user
+            var totalPointsText = document.getElementById("totalPointsText");
+            var probabilityText = document.getElementById("probabilityText");
+            totalPointsText.textContent = "Total Points: " + linearTotalPoints.toFixed(2);
+            probabilityText.textContent = "Probability of Qualifying for Champions League: " + logisticProbability.toFixed(2) + "%";
+            totalPointsText.style.display = "block";
+            probabilityText.style.display = "block";
+        });
+    </script>
+</body>
+</html>
