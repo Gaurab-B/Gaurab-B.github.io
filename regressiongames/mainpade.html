@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative; /* Make the body position relative */
         }
         .title {
             position: fixed;
@@ -22,23 +23,7 @@
             background-color: #f0f0f0;
             padding: 10px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .buttons {
-            margin-top: 100px; /* Adjust as needed */
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none; /* Remove default underline */
-        }
-        .button:hover {
-            background-color: #0056b3;
+            z-index: 1; /* Ensure the title is above math symbols */
         }
         .buttons {
             margin-top: 100px; /* Adjust as needed */
@@ -46,30 +31,6 @@
             flex-direction: column;
             align-items: center;
         }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none; /* Remove default underline */
-            transition: background-color 0.3s; /* Smooth transition effect */
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .buttons {
-            margin-top: 100px; /* Adjust as needed */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         .button {
             padding: 10px 20px;
             font-size: 16px;
@@ -84,13 +45,17 @@
             float: left; /* Make the button float */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
         }
-
         .button:hover {
             background-color: #0056b3;
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
         }
-
-        </style>
+        .math-symbol {
+            position: absolute;
+            font-size: 20px;
+            color: #ccc; /* Adjust color as needed */
+            z-index: 0; /* Ensure symbols are below other content */
+        }
+    </style>
 </head>
 <body>
     <div class="title">Regression Calculator</div>
@@ -100,5 +65,70 @@
         <a href="logistic.html" class="button">Logistic Regression</a>
         <a href="all.html" class="button">Both Linear and Logistic Regression</a>
     </div>
+
+    <script>
+        // Function to generate random math symbols
+        function generateMathSymbols() {
+            // List of math symbols
+            var symbols = ["&Sigma;", "&mu;", "&Delta;", "&theta;", "&pi;", "&lambda;"];
+
+            // Get window dimensions
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            // Number of symbols to generate (adjust as needed)
+            var numSymbols = 5;
+
+            // Define left and right regions
+            var leftRegion = {
+                startX: 0,
+                endX: windowWidth * 0.4, // Adjust percentage as needed
+                startY: 0,
+                endY: windowHeight
+            };
+
+            var rightRegion = {
+                startX: windowWidth * 0.6, // Adjust percentage as needed
+                endX: windowWidth,
+                startY: 0,
+                endY: windowHeight
+            };
+
+            // Generate and position symbols on the left side
+            for (var i = 0; i < numSymbols; i++) {
+                generateSymbolInRegion(symbols, leftRegion);
+            }
+
+            // Generate and position symbols on the right side
+            for (var i = 0; i < numSymbols; i++) {
+                generateSymbolInRegion(symbols, rightRegion);
+            }
+        }
+
+        // Function to generate a symbol within a given region
+        function generateSymbolInRegion(symbols, region) {
+            // Choose a random symbol
+            var symbol = symbols[Math.floor(Math.random() * symbols.length)];
+
+            // Create a new element for the symbol
+            var symbolElement = document.createElement("div");
+            symbolElement.innerHTML = symbol;
+            symbolElement.classList.add("math-symbol");
+
+            // Generate random position within the region
+            var x = Math.random() * (region.endX - region.startX) + region.startX;
+            var y = Math.random() * (region.endY - region.startY) + region.startY;
+
+            // Set position
+            symbolElement.style.left = x + "px";
+            symbolElement.style.top = y + "px";
+
+            // Append to the body
+            document.body.appendChild(symbolElement);
+        }
+
+        // Call the function when the page loads
+        window.onload = generateMathSymbols;
+    </script>
 </body>
 </html>
