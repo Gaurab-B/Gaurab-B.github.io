@@ -47,10 +47,35 @@
             margin-top: 20px;
             font-size: 18px;
         }
+        .go-back {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .go-back-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.go-back {
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff; /* Text color */
+    background-color: #007bff; /* Background color */
+    padding: 8px 16px; /* Adjust padding */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+.go-back:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
     </style>
 </head>
 <body>
-    <div class="title"> Linear Regression Calculator</div>
+    <div class="title">Linear Regression Calculator</div>
+    <div class="go-back-container">
+        <a href="mainpade.html" class="go-back">Go Back</a>
+    </div>
     <div class="form-container">
         <form id="regressionForm">
             <label class="form-label" for="buildUpPlayPassing">Build Up Play Passing:</label>
