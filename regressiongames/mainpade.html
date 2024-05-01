@@ -55,10 +55,49 @@
             color: #ccc; /* Adjust color as needed */
             z-index: -5; /* Ensure symbols are below other content */
         }
+   .go-back {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .go-back-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
 
+.go-back {
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff; /* Text color */
+    background-color: #007bff; /* Background color */
+    padding: 8px 16px; /* Adjust padding */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+.go-back:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+nav {
+        background-color: #f0f0f0;
+        padding: 20px 0; /* Add padding to top and bottom */
+    }
+    .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -10; /* Remove margin-top */
+    margin-bottom: 0; /* Remove margin-bottom */
+    margin-right: calc(80px + 16px); /* Add margin-right to maintain distance from .go-back-container */
+
+}
     </style>
 </head>
 <body>
+    <nav>
+        <div class="go-back-container">
+            <a href="DATA_DICTIONARY.html" class="go-back">Data-Dictionary</a>
+        </div>
+    </nav>
     <div class="title">Soccer Predictions</div>
     <div class="buttons">
         <p>What would like to predict today?</p>
