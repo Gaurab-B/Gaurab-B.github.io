@@ -77,12 +77,20 @@
         opacity: 0.1;
         z-index: -1;
     }
+    .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0; /* Remove margin-top */
+    margin-bottom: 0; /* Remove margin-bottom */
+    margin-right: calc(80px + 16px); /* Add margin-right to maintain distance from .go-back-container */
+}
 </style>
 </head>
 <body>
     <nav>
         <div class="title">Predict Points and Chance of Qualification</div>
         <div class="go-back-container">
+            <a href="DATA_DICTIONARY.html" class="go-back">Data Dictionary</a>
             <a href="mainpade.html" class="go-back">Go Back</a>
         </div>
     </nav>
